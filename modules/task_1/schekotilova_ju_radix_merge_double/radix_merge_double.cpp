@@ -35,7 +35,7 @@ void countingSort(double* in, double* out, int byteVal, int size) {
   value = count[i];
   count[i] = 0;
   i++;
-  for (i; i < 256; i++) {
+  for (; i < 256; i++) {
     int tmp = count[i];
     count[i] = value;
     value += tmp;
