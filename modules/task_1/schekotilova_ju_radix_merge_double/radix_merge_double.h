@@ -14,4 +14,4 @@
   int radixSort(double* arr, int size);
   int generateArray(double* arr, int size);
 
-#endif  // MODULES_TASK_1_SCHEKOTILOVA_JU_RADIX_MERGE_DOBULE_RADIX_MERGE_DOUBLE_H_
+#endif  // MODULES_TASK_1_SCHEKOTILOVA_JU_RADIX_MERGE_DOUBLE_RADIX_MERGE_DOUBLE_H_
