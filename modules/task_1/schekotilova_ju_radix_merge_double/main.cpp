@@ -23,7 +23,7 @@ TEST(TEST_SEQ, WROGNG_SIZE) {
 }
 
 TEST(TEST_SEQ, ZERO_SIZE) {
-   int size = 0, res = 0;
+  int size = 0, res = 0;
   double* arr = nullptr;
 
   if (size > 0) {
