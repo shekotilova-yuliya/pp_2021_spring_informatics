@@ -22,23 +22,23 @@ int mergingArrays(double* arr, double* arr_, int size, int size_, double* result
 
 void countingSort(double* in, double* out, int byteVal, int size) {
   unsigned char* arr = (unsigned char*)in;
-  int count[256], value, i;
+  int count[256];
+  int val, i;
   memset(count, 0, sizeof(int) * 256);
-  for (int j = 0; j < size; j++) {
-    count[arr[8 * j + byteVal]]++;
-  }
+  for (int j = 0; j < size; j++)
+      count[arr[8 * j + byteVal]]++;
   for (i = 0; i < 256; i++) {
     if (count[i] != 0) {
       break;
     }
   }
-  value = count[i];
+  val = count[i];
   count[i] = 0;
   i++;
   for (; i < 256; i++) {
     int tmp = count[i];
-    count[i] = value;
-    value += tmp;
+    count[i] = val;
+    val += tmp;
   }
 
   for (int j = 0; j < size; j++) {

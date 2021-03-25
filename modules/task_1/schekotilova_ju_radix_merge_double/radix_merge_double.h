@@ -3,8 +3,9 @@
 #define MODULES_TASK_1_SCHEKOTILOVA_JU_RADIX_MERGE_DOUBLE_RADIX_MERGE_DOUBLE_H_
 #include <time.h>
 #include <random>
+#include <cstring>
+#include <utility>
 #include <algorithm>
-#include <array>
 
   int mergingArrays(double* arr, double* arr_, int size, int size_,
     double* result);
