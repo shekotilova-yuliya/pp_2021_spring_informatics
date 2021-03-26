@@ -1,6 +1,8 @@
 // Copyright 2021 Schekotilova Julia
 
 #include <gtest/gtest.h>
+#include <algorithm>
+#include <array>
 #include "./radix_merge_double.h"
 
 TEST(TEST_SEQ, WROGNG_SIZE) {
@@ -23,7 +25,7 @@ TEST(TEST_SEQ, WROGNG_SIZE) {
 }
 
 TEST(TEST_SEQ, ZERO_SIZE) {
-  int size = 0, res = 0;
+   int size = 0, res = 0;
   double* arr = nullptr;
 
   if (size > 0) {
@@ -58,7 +60,7 @@ TEST(TEST_SEQ, SIZE_100) {
 
   if (size > 0) {
     arr = reinterpret_cast<double*>(malloc(sizeof(double) * size));
-  } else {
+  } else { 
     res = -1;
   }
   res = generateArray(arr, size);
@@ -77,7 +79,7 @@ TEST(TEST_SEQ, SIZE_1000) {
 
   if (size > 0) {
     arr = reinterpret_cast<double*>(malloc(sizeof(double) * size));
-  } else {
+  } else { 
     res = -1;
   }
   res = generateArray(arr, size);

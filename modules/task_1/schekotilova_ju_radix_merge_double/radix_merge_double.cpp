@@ -22,22 +22,23 @@ int mergingArrays(double* arr, double* arr_, int size, int size_, double* result
 
 void countingSort(double* in, double* out, int byteVal, int size) {
   unsigned char* arr = (unsigned char*)in;
-  int count[256];
-  int val;
+  int count[256], value, i;
   memset(count, 0, sizeof(int) * 256);
-  for (int j = 0; j < size; j++)
-      count[arr[8 * j + byteVal]]++;
-  int i;
+  for (int j = 0; j < size; j++) {
+    count[arr[8 * j + byteVal]]++;
+  }  
   for (i = 0; i < 256; i++) {
-    if (count[i] != 0) break;
+    if (count[i] != 0) {
+      break;
+    }
   }
-  val = count[i];
+  value = count[i];
   count[i] = 0;
   i++;
-  for (; i < 256; i++) {
+  for (i; i < 256; i++) {
     int tmp = count[i];
-    count[i] = val;
-    val += tmp;
+    count[i] = value;
+    value += tmp;
   }
 
   for (int j = 0; j < size; j++) {
@@ -51,7 +52,8 @@ int unsgnRadixSort(double* arr, int size) {
   int num = 4;
   if (size < 1) {
     return 0;
-  } else if (size < 0 || arr == nullptr || outArr == nullptr) {
+  }
+  else if (size < 0 || arr == nullptr || outArr == nullptr) {
     return -1;
   } else {
     for (int i = 0; i < num; i++) {
@@ -73,16 +75,18 @@ int radixSort(double* arr, int size) {
   int res = 0;
   pArr = reinterpret_cast<double*>(malloc(sizeof(double) * size));
   nArr = reinterpret_cast<double*>(malloc(sizeof(double) * size));
-  if ((size < 1) || (arr == nullptr)) {
+  if (size < 1 || arr == nullptr) {
     return -1;
-  } else if ((pArr == nullptr) || (nArr == nullptr)) {
+  }
+  else if (pArr == nullptr || nArr == nullptr) {
     return -1;
   } else {
     for (int i = 0; i < size; i++) {
       if (arr[i] >= 0) {
         pArr[pSize] = arr[i];
         pSize++;
-      } else {
+      }
+      else {
         nArr[nSize] = arr[i];
         nSize++;
       }
