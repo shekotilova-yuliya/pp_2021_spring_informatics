@@ -76,16 +76,14 @@ int radixSort(double* arr, int size) {
   nArr = reinterpret_cast<double*>(malloc(sizeof(double) * size));
   if (size < 1 || arr == nullptr) {
     return -1;
-  }
-  else if (pArr == nullptr || nArr == nullptr) {
-      return -1;
+  } else if (pArr == nullptr || nArr == nullptr) {
+    return -1;
   }
   for (int i = 0; i < size; i++) {
     if (arr[i] >= 0) {
       pArr[pSize] = arr[i];
       pSize++;
-    }
-    else {
+    } else {
       nArr[nSize] = arr[i];
       nSize++;
     }
