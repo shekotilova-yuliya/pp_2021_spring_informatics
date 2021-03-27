@@ -103,6 +103,6 @@ bool checker(double* arr, int size) {
     } else {
       return false;
     }
-    return true;
   }
+  return true;
 }
