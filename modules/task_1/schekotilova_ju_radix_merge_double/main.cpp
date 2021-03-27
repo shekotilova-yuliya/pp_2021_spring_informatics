@@ -5,7 +5,7 @@
 
 TEST(TEST_SEQ, SIZE_5) {
   int size = 5;
-  double* arr = new double[size] { 2.0, 8.66667, 1.69, 99.147, 57.3579 };
+  double* arr = new double[size] { 1.65, 5.5582, 29.9, 9.155, 52.864 };
   bool result = false;
   radixSort(arr, size);
   result = checker(arr, size);
