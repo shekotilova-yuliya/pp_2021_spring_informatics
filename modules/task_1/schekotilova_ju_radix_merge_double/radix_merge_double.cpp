@@ -45,45 +45,45 @@ void last_sorting(double* in, double* out, int size, int val) {
   }
 }
 
-void ordered_merge(double* source, double* source_, int size, int size_, double* res) {
+void ordered_merge(double* arr, double* arr_, int size, int size_, double* res) {
   int i = 0;
   int j = 0;
   int a = 0;
   while ((i < size) && (j < size_)) {
-    if (source[i] < source_[j]) {
-      res[a] = source[i];
+    if (arr[i] < arr_[j]) {
+      res[a] = arr[i];
       i++;
     } else {
-      res[a] = source_[j];
+      res[a] = arr_[j];
       j++;
     }
     a++;
   }
 
   while (i < size) {
-    res[a] = source[i];
+    res[a] = arr[i];
     i++;
     a++;
   }
 
   while (j < size_) {
-    res[a] = source_[j];
+    res[a] = arr_[j];
     j++;
     a++;
   }
 }
 
-void radixSort(double* source, int size) {
+void radixSort(double* arr, int size) {
   double* temp = nullptr;
-  double* dest = new double[size];
+  double* out = new double[size];
   for (int i = 0; i < 8; i++) {
-    sorting(source, dest, size, i);
-    temp = source;
-    source = dest;
-    dest = temp;
+    sorting(arr, out, size, i);
+    temp = arr;
+    arr = out;
+    out = temp;
   }
-  last_sorting(source, dest, size, 7);
-  delete[] dest;
+  last_sorting(arr, out, size, 7);
+  delete[] out;
 }
 
 double* generateArray(double* arr, int size) {
