@@ -4,6 +4,13 @@
 
 #include <omp.h>
 #include <time.h>
+#include <stdio.h>
+#include <tbb/tbb.h>
+#include <cstring>
+#include <iterator>
+#include <ctime>
+#include <random>
+#include <utility>
 #include <random>
 #include <vector>
 

@@ -1,14 +1,4 @@
 // Copyright 2021 Schekotilova Julia
-#include <omp.h>
-#include <stdio.h>
-#include <tbb/tbb.h>
-#include "tbb/task_scheduler_init.h"
-#include "tbb/critical_section.h"
-#include <cstring>
-#include <iterator>
-#include <ctime>
-#include <random>
-#include <utility>
 #include <vector>
 #include "../../../modules/task_3/schekotilova_ju_radix_merge_double/radix_merge_double.h"
 
@@ -52,8 +42,7 @@ std::vector<double> last_sorting(std::vector<double> in) {
     if (arr[8 * i + val] < 128) {
       out[counter[arr[8 * i + val]]] = in[i];
       counter[arr[8 * i + val]]++;
-    }
-    else {
+    } else {
       counter[arr[8 * i + val]]--;
       out[counter[arr[8 * i + val]]] = in[i];
     }
@@ -127,7 +116,7 @@ std::vector<double> radix_sort_tbb(const std::vector<double>& in) {
   res = arr[0];
   for (int i = 0; i < counter - 1; i++) {
     res = merge(res, arr[i + 1]);
-  }  
+  }
   return res;
 }
 
@@ -138,8 +127,7 @@ std::vector<double> radix_sort_tbb(const std::vector<double>& in) {
   for (k = 0; (k < (size + size_ - 1)) && ((i < size) && (j < size_)); k++) {
     if (arr[i] < arr_[j]) {
       result[k] = arr[i++];
-    }
-    else {
+    } else {
       result[k] = arr_[j++];
     }
   }
@@ -160,8 +148,7 @@ bool checker(std::vector<double> arr, int size) {
   for (int i = 0; i < size - 1; i++) {
     if (arr[i + 1] >= arr[i]) {
       i++;
-    }
-    else {
+    } else {
       return false;
     }
   }
