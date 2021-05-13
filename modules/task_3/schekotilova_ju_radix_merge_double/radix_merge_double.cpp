@@ -71,7 +71,7 @@ std::vector<double> radix_sort_omp(const std::vector<double>& in) {
   size_arr = (in.size() - 1) / thrd + 1;
   arr = std::vector<std::vector<double>>((in.size() + size_arr) / size_arr);
   for (size_t i = 0; i < in.size(); i += size_arr) {
-    int last = min(in.size(), (i + size_arr));
+    int last = std::min(in.size(), (i + size_arr));
     int idx = i / size_arr;
     std::vector<double>& vector = arr[idx];
     vector.reserve(last - i);
@@ -101,7 +101,7 @@ std::vector<double> radix_sort_tbb(const std::vector<double>& in) {
   size_arr = (in.size() - 1) / thrd + 1;
   arr = std::vector<std::vector<double>>((in.size() + size_arr) / size_arr);
   for (size_t i = 0; i < in.size(); i += size_arr) {
-    int last = min(in.size(), (i + size_arr));
+    int last = std::min(in.size(), (i + size_arr));
     int idx = i / size_arr;
     std::vector<double>& vector = arr[idx];
     vector.reserve(last - i);
