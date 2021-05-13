@@ -1,4 +1,5 @@
 // Copyright 2021 Schekotilova Julia
+#define NOMINMAX
 #include <vector>
 #include "../../../modules/task_3/schekotilova_ju_radix_merge_double/radix_merge_double.h"
 
